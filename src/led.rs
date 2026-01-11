@@ -88,7 +88,7 @@ pub struct LedStrip<PIN: PinOps> {
 
 impl<PIN> LedStrip<PIN> where PIN: PinOps {
     #[allow(dead_code)]
-    pub(crate) fn new(led_count: usize, pin: Pin<Input<Floating>, PIN>) -> LedStrip<PIN> {
+    pub fn new(led_count: usize, pin: Pin<Input<Floating>, PIN>) -> LedStrip<PIN> {
         LedStrip {
             led_count,
             pin: pin.into_output(),
