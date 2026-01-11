@@ -3,6 +3,7 @@ use core::convert::From;
 use arduino_hal::port::{Pin, PinOps};
 use arduino_hal::port::mode::{Floating, Input, Output};
 
+#[derive(Copy, Clone)]
 pub enum Color {
     RGB(u8, u8, u8),
     NUM(u32),
