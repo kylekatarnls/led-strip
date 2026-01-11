@@ -1,0 +1,36 @@
+[package]
+name = "spinner"
+version = "0.1.0"
+authors = ["kyle"]
+edition = "2021"
+
+[[bin]]
+name = "spinner"
+test = true
+doctest = false
+bench = false
+
+[dependencies.arduino-hal]
+git = "https://github.com/rahix/avr-hal"
+rev = "0f7fa4d01755f1985d95ed2015d5464a29154b05"
+features = ["trinket-pro"]
+
+[dependencies.led-strip]
+git = "https://github.com/kylekatarnls/led-strip"
+rev = "e0600354ba86d909dff190e55060d69b36f3dd6a"
+
+# Configure the build for minimal size - AVRs have very little program memory
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+
+[features]
+testing = []
