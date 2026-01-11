@@ -1,4 +1,5 @@
-
+use core::ops::Fn;
+use core::convert::From;
 use arduino_hal::port::{Pin, PinOps};
 use arduino_hal::port::mode::{Floating, Input, Output};
 
